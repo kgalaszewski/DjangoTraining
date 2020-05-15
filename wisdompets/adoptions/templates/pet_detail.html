@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block glownaTrescStronki %}
+<div>
+    <h1>Oto info na temat zwierzaka {{pet.name}}</h1>
+    <table style="width:100%">
+        <tr>
+            <th>Pet Name</th>
+            <th>Pet Vaccinations</th>
+        </tr>
+        <tr>
+            <td>{{ pet.name }}</td>
+            <td>{% for vac in pet.vaccinations.all %}
+                    <h3>{{ vac.name }}</h3>
+                {% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% endblock glownaTrescStronki %}

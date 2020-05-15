@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block glownaTrescStronki %}
+<div>
+    <h1>Please find the list of all of our pets :)</h1>
+    <table style="width:100%">
+        <tr>
+            <th>Pet Name</th>
+            <th>Pet Breed</th>
+            <th>Pet Age</th>
+            <th>GOTO details</th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+            <td>{{ pet.name|capfirst }}</td>
+            <td>{{ pet.breed|capfirst }}</td>
+            <td>{{ pet.age }}</td>
+            <td><a href="{% url 'pet_detail' pet.id %}">Go to details</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock glownaTrescStronki %}
