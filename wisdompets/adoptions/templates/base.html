@@ -1,0 +1,40 @@
+{% load static %}
+<div>
+    <div id="bodyId">
+    <h1>
+        Welcome to the Kodi dodi
+        </br>
+        <button onclick="hideOrShow()" id="hideShowButton">Hide Kodusia</button></br>
+        <img src="{% static 'images/bc.png' %}" id="KodiImage" class="lol"/>
+        </br>
+    </h1>
+</div>
+<body id="MainDiv">
+{% block glownaTrescStronki %}
+{% endblock glownaTrescStronki %}
+</br>
+Pytong
+<label>Choose the color of background : </label>
+<input type="text" placeholder="ex. Pink" id="colorInput"></input>
+<button onclick="changeBackgroundColor()">Change body color</button>
+<script src="{% static 'main.js'%}"></script>
+<script type="text/javascript">
+function hideOrShow()
+{
+    var imgElement = document.getElementById("KodiImage");
+    var buttonElemeent = document.getElementById("hideShowButton");
+
+    if (imgElement.style.visibility === "visible")
+    {
+        imgElement.style.visibility = "hidden";
+        buttonElemeent.firstChild.data = "ShowKodusia";
+    }
+    else
+    {
+        imgElement.style.visibility = "visible";
+        buttonElemeent.firstChild.data = "Hide Kodusia"; 
+    }
+}
+</script>
+</body>
+</div>

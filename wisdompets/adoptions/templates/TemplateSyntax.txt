@@ -1,0 +1,27 @@
+{{ variable }} ex. pet.name czyli nazwa z contextowego dict
+
+ {% tag %}
+
+{{ variable|filter }} ex. pet.name|capfirst   czyli nazwa z pierwsza duza litera
+{{ pet.date|date:"M d Y" }} przyklad formatowania daty w htmlu 
+
+
+Przyklad petli :
+{% for i in range (x) %}
+    <h1>{{ pet.name }}</h1>
+{% endfor %}
+
+Przyklad ifa :
+{% if pet.age %}
+{% endif %}
+
+
+url pattern :  do tego np wlasnie np. jest nazwa dodana w urls.py jako string
+<a href="{% url 'home1' pet.id %}">
+
+
+!!! mozna dziedziczyc po innym widoku np ogólnym który sobie zrobimy, trzeba zaznaczyć w 1 linijce htmla
+{% extends "nazwa.html" %}
+{% block content %}
+bedzie utworzony html na bazie nazwa.html a w body nazwa.html bedzie ten content block
+{% endblock content %}
