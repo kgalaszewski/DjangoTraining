@@ -30,9 +30,9 @@ def create_pet_get(request):
     return render(request, 'create_pet.html', {'pet': pet})
 
 
-def create_pet_post(request, pet_name):
+def create_pet_post(request, pet_name, pet_breed):
     try:
-        pet2 = Pet(name=pet_name, submitter='asd', species='asdasd', breed='asd',
+        pet2 = Pet(name=pet_name, submitter='asd', species='asdasd', breed=pet_breed,
                    description='asdasd', sex='M', submission_date='2007-01-01 10:00:00')
         pet2.save()
     except:

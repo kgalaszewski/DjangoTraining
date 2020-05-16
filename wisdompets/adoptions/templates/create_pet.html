@@ -5,7 +5,21 @@
 </br>
 </br>
 </br>
-<a href="{% url 'create_pet_post' pet.name %}">Create</a>
+<label for="pet.name">Pet Name</label>
+<input placeholder="Pet Name" value="{{ pet.name }}" id="input1" />
+</br><label for="pet.breed">Pet Breed</label>
+<input placeholder="Pet Breed" value="{{ pet.breed }}" id="input2" />
+<button onclick="CreateAnimal()">Create a pet</button>
+<script type="text/javascript">
+    function CreateAnimal() {
+        var name = document.getElementById("input1").value;
+        var breed = document.getElementById("input2").value;
+
+        var href = "http://localhost:8000/adoptions/pets/insert/" + name + "/" + breed + "/";
+        console.log(href);
+        window.location.replace(href);
+    }
+</script>
 </br>
 </br>
 {% endblock glownaTrescStronki %}
